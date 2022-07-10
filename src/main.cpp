@@ -3,7 +3,6 @@
 #include "chassis.hpp"
 
 PRIZM prizm;
-EXPANSION exc;
 
 void setup() {
   
