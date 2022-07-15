@@ -6,14 +6,14 @@ PRIZM prizm;
 
 void setup() {
   
+  Serial.begin(9600);
   prizm.PrizmBegin();
-  // exc.setServoSpeeds(2,25,25,25,25,25,25);
 
 }
 
 void loop() {
   
-  setBodyDegree(1/4, 500, 500, 0);
+  setBodyDegree(0, 692, 400, 0);
   delay(1000);
 
 }
