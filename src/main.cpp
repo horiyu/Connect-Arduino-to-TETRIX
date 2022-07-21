@@ -13,7 +13,7 @@ void setup() {
 
 void loop() {
   
-  setBodyDegree(0, 692, 400, 0);
+  setBodyDegree(1*PI/4, 500);
   delay(1000);
 
 }

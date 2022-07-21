@@ -4,11 +4,14 @@
 
 EXPANSION exc;
 
-void setBodyDegree(double Bdegrees, double vel_x, double vel_y, double vel_turn){
+void setBodyDegree(double Bdegrees, double vel, double yaw = 0, double vel_turn = 0){
+
+    double vel_x = cos(Bdegrees) * vel;
+    double vel_y = sin(Bdegrees) * vel;
     
-    exc.setMotorSpeed(1,1,(sin((Bdegrees+(7*PI/4)))*vel_x+cos((Bdegrees+(7*PI/4)))*vel_y+vel_turn));
-    exc.setMotorSpeed(1,2,(sin((Bdegrees+(5*PI/4)))*vel_x+cos((Bdegrees+(5*PI/4)))*vel_y+vel_turn));
-    exc.setMotorSpeed(3,1,(sin((Bdegrees+(1*PI/4)))*vel_x+cos((Bdegrees+(1*PI/4)))*vel_y+vel_turn));
-    exc.setMotorSpeed(3,2,(sin((Bdegrees+(3*PI/4)))*vel_x+cos((Bdegrees+(3*PI/4)))*vel_y+vel_turn));
+    exc.setMotorSpeed(1, 1, (cos((yaw+(1*PI/4))) * vel_x + sin((yaw+(1*PI/4))) * vel_y + vel_turn));
+    exc.setMotorSpeed(1, 2, (cos((yaw+(5*PI/4))) * vel_x + sin((yaw+(5*PI/4))) * vel_y + vel_turn));
+    exc.setMotorSpeed(3, 2, (cos((yaw+(3*PI/4))) * vel_x + sin((yaw+(3*PI/4))) * vel_y + vel_turn));
+    exc.setMotorSpeed(3, 1, (cos((yaw+(7*PI/4))) * vel_x + sin((yaw+(7*PI/4))) * vel_y + vel_turn));
 
 }

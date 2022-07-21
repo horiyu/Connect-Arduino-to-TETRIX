@@ -7,6 +7,6 @@
 
 extern EXPANSION exc;
 
-void setBodyDegree(double Bdegrees, double vel_x, double vel_y, double vel_turn);
+void setBodyDegree(double Bdegrees, double vel, double yaw = 0, double vel_turn = 0);
 
 #endif
